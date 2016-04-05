@@ -34,6 +34,7 @@ while(true) {
 
   while(hid.recv(hidMsg)) {
     if(hidMsg.isAxisMotion()) {
+
       if(hidMsg.which == 1 && hidMsg.axisPosition <= 0) {
         ( (Std.fabs(hidMsg.axisPosition) * 8191) + 8192) $ int => bendValue;
       }
